@@ -17,7 +17,6 @@ import Cookies from 'js-cookie';
 function HomePage({ userData }) {
 
     const [loading, setLoading] = useState(true);
-
     useEffect(() => {
         const timer = setTimeout(() => {
             setLoading(false);
@@ -25,9 +24,7 @@ function HomePage({ userData }) {
         return () => clearTimeout(timer);
     }, []);
 
-
     const [events, setEvents] = useState([]);
-
 
     const fetchEvents = async () => {
         setLoading(true);
@@ -104,8 +101,6 @@ function HomePage({ userData }) {
 
         try {
 
-            console.log(formData);
-            console.log(images);
             const formDataToSend = new FormData();
             formDataToSend.append('name', formData.name);
             formDataToSend.append('description', formData.description);
@@ -155,7 +150,7 @@ function HomePage({ userData }) {
                         height={100}
                         width={100}
                         radius={5}
-                        color="#4fa94d"
+                        color="#36C5FF"
                         ariaLabel="ball-triangle-loading"
                         visible={true}
                         wrapperStyle={{}}

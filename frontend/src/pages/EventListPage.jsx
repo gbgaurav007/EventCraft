@@ -99,7 +99,7 @@ function EventListPage() {
             height={100}
             width={100}
             radius={5}
-            color="#FF5733"
+            color="#36C5FF"
             ariaLabel="ball-triangle-loading"
             wrapperStyle={{}}
             visible={true}
