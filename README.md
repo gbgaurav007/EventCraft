@@ -147,7 +147,7 @@ EventCraft/
 
 ## Deployed Website
 
-The EventCraft application has been deployed on Vercel. It can be accessed through the following url: https://EventCraft.vercel.app
+The EventCraft application has been deployed on Vercel. It can be accessed through the following url: https://event-craft.vercel.app/
 
 ## Contributing
 
