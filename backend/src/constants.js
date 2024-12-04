@@ -1,1 +1,1 @@
-export const DB_NAME = "EventCraft";
+export const DB_NAME = "eventspot-lite";
