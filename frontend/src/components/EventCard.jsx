@@ -1,15 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
 const EventCard = ({ event, handleViewDetails }) => {
   const { name, date, location, category, images, price } = event;
 
+  const navigate = useNavigate();
   return (
-    <div 
+    <div
       className="bg-white rounded-lg shadow-sm overflow-hidden cursor-pointer hover:shadow-xl transition-transform hover:scale-[1.02]"
-      onClick={() => handleViewDetails(event)}
     >
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden" onClick={() => handleViewDetails(event)}>
         <img
           src={images[0]}
           alt={name}
@@ -33,7 +34,13 @@ const EventCard = ({ event, handleViewDetails }) => {
           <div className="text-md font-semibold text-gray-800">
             ₹{price} Onwards
           </div>
-          <button className="text-blue-600 font-semibold">
+          <button
+            className="text-blue-600 font-semibold"
+            onClick={(e) => {
+              e.stopPropagation();
+              navigate('/payment', { state: { event } });
+            }}
+          >
             BUY NOW
           </button>
         </div>
