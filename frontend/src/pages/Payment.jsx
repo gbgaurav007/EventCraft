@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import API_BASE_URL from '../../ApiBaseURL';
 import Cookies from "js-cookie";
+import { Link } from 'react-router-dom';
 
 const Payment = () => {
     const { state } = useLocation();
@@ -169,7 +170,7 @@ const Payment = () => {
                                     className="mr-2"
                                 />
                                 <pre>I have read and accepted the </pre> {' '}
-                                <pre><a href="/terms" className="text-blue-500 underline">terms and conditions</a></pre>
+                                <Link to="/terms"><pre><a className="text-blue-500 underline cursor-pointer">terms and conditions</a></pre></Link>
                             </label>
                         </div>
 
