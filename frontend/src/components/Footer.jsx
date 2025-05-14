@@ -1,5 +1,6 @@
-import { useNavigate } from "react-router-dom";
-import github from "/assets/github-mark.png"
+import { Link, useNavigate } from "react-router-dom";
+import facebook from "/assets/facebook.png";
+import instagram from "/assets/instagram.png";
 import linkedin from "/assets/linkedin.png";
 import logo from "/assets/logo.png";
 
@@ -19,7 +20,7 @@ export default function Footer() {
             <img
               onClick={() => navigate("/")}
               src={logo}
-              alt="EventCraft"
+              alt="EventSpot Lite"
               className="cursor-pointer mb-2 h-14 w-auto"
             />
             <p className="text-lg text-black">Find Events That Inspire!</p>
@@ -29,22 +30,34 @@ export default function Footer() {
           <section className="mb-4 md:mb-0 text-black">
             <nav>
               <ul className="list-none space-y-2">
-                <li className="cursor-pointer hover:text-blue-800">
-                  Terms & Conditions
-                </li>
-                <li className="cursor-pointer hover:text-blue-800">
-                  Privacy Policy
-                </li>
-                <li className="cursor-pointer hover:text-blue-800">
-                  Refund Policy
-                </li>
+                <Link to="/terms">
+                  <li className="cursor-pointer hover:text-blue-800">
+                    Terms & Conditions
+                  </li>
+                </Link>
+
+                <Link to="/privacy">
+                  <li className="cursor-pointer hover:text-blue-800">
+                    Privacy Policy
+                  </li>
+                </Link>
+
+                <Link to="/refund">
+                  <li className="cursor-pointer hover:text-blue-800">
+                    Refund Policy
+                  </li>
+                </Link>
+
               </ul>
             </nav>
           </section>
 
           {/* Contact information section */}
           <section className="mb-4 md:mb-0 text-black">
-            <h4 className="font-semibold">Contact Us</h4>
+            <Link to="/contact">
+              <h4 className="font-semibold cursor-pointer hover:text-blue-800">Contact Us</h4>
+            </Link>
+            
             <ul className="list-none mt-2">
               <li>gbgauravbansal007@gmail.com</li>
             </ul>
@@ -57,7 +70,7 @@ export default function Footer() {
 
               {/* Link to GitHub profile */}
               <a href="https://github.com/gbgaurav007" target="_blank" rel="noopener noreferrer">
-                <img src={github} alt="Github" className="cursor-pointer h-11 w-auto hover:opacity-80" />
+                <img src={facebook} alt="Github" className="cursor-pointer h-11 w-auto hover:opacity-80" />
               </a>
 
               {/* Link to LinkedIn profile */}
