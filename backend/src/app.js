@@ -18,7 +18,9 @@ app.use(cookieParser());
 
 import userRouter from "./routes/user.routes.js";
 import eventRouter from "./routes/event.routes.js";
+import paymentRouter from "./routes/payment.routes.js";
 app.use("/api/auth", userRouter);
 app.use("/api/events", eventRouter);
+app.use("/api", paymentRouter);
 
 export { app };
