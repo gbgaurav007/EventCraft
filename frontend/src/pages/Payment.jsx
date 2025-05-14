@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import API_BASE_URL from '../../ApiBaseURL';
 import Cookies from "js-cookie";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Payment = () => {
     const { state } = useLocation();
@@ -14,6 +14,8 @@ const Payment = () => {
 
     const [user, setUser] = useState([]);
     const [loading, setLoading] = useState(true);
+
+    const navigate = useNavigate();
 
     const fetchCurrentUser = async () => {
         setLoading(true);
@@ -96,6 +98,7 @@ const Payment = () => {
                     handler: function (response) {
                         alert('Payment successful!');
                         console.log('Razorpay response:', response);
+                        navigate("/home");
                     },
                     prefill: {
                         name: user.name,
