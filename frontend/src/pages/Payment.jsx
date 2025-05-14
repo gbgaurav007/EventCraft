@@ -53,9 +53,9 @@ const Payment = () => {
         return () => clearTimeout(timer);
     }, []);
 
-      useEffect(() => {
+    useEffect(() => {
         window.scrollTo(0, 0);
-      }, []);
+    }, []);
 
     const [ticketCount, setTicketCount] = useState(1);
     const [address, setAddress] = useState('');
@@ -68,22 +68,59 @@ const Payment = () => {
         if (ticketCount > 1) setTicketCount((prev) => prev - 1);
     };
 
-    const handleSubmit = (e) => {
+    const handlePayment = (e) => {
+
         e.preventDefault();
-        if (!agreed || !address) {
-            alert('Please fill in all fields and accept terms.');
-            return;
-        }
-        // Proceed with payment initiation
-        console.log({
-            eventName,
-            category,
-            ticketCount,
-            totalPrice,
-            billingDetails: { ...user, address },
-        });
-        alert('Proceeding to payment...');
-    };
+
+        fetch(`${API_BASE_URL}pay`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${Cookies.get("accessToken")}`,
+            },
+            body: JSON.stringify({ amount: totalPrice, email: user.email, name: user.name, contact: user.contact, address: address }),
+            credentials: 'include',
+        })
+            .then(response => response.json())
+            .then((data) => {
+
+                console.log('Payment Response:', data);
+
+                const options = {
+                    key: 'rzp_test_2ZOB2omND8O3XS',
+                    amount: data.data.amount * 100,
+                    currency: data.data.currency,
+                    name: 'Payment Gateway',
+                    description: `Payment for ${eventName}`,
+                    payment_id: data.data.paymentId,
+                    handler: function (response) {
+                        alert('Payment successful!');
+                        console.log('Razorpay response:', response);
+                    },
+                    prefill: {
+                        name: user.name,
+                        email: user.email,
+                        contact: user.contact
+                    },
+                    notes: {
+                        address: address,
+                    },
+                    theme: {
+                        color: '#3399cc',
+                    },
+                };
+
+                console.log(options);
+
+                const rzp = new window.Razorpay(options);
+                rzp.open();
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('Payment initiation failed');
+            });
+
+    }
 
     if (!event) return <p>Event not found.</p>;
 
@@ -134,7 +171,7 @@ const Payment = () => {
                     </div>
 
                     <h2 className="text-xl font-bold mb-4">Billing Details</h2>
-                    <form onSubmit={handleSubmit}>
+                    <form>
                         <div className="grid gap-4 mb-4">
                             <input
                                 value={user.name}
@@ -181,6 +218,7 @@ const Payment = () => {
                                 ? 'bg-blue-600 text-white hover:bg-blue-700'
                                 : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                                 }`}
+                            onClick={handlePayment}
                         >
                             CONTINUE
                         </button>
