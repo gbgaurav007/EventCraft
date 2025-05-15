@@ -80,9 +80,10 @@ const Payment = () => {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${Cookies.get("accessToken")}`,
             },
-            body: JSON.stringify({ amount: totalPrice, email: user.email, name: user.name, contact: user.contact, address: address,
+            body: JSON.stringify({
+                amount: totalPrice, email: user.email, name: user.name, contact: user.contact, address: address,
                 event: { name: eventName, category, date: eventDate, location, images }, tickets: ticketCount
-             }),
+            }),
             credentials: 'include',
         })
             .then(response => response.json())
@@ -211,8 +212,7 @@ const Payment = () => {
                                     onChange={() => setAgreed(!agreed)}
                                     className="mr-2"
                                 />
-                                <pre>I have read and accepted the </pre> {' '}
-                                <Link to="/terms"><pre><a className="text-blue-500 underline cursor-pointer">terms and conditions</a></pre></Link>
+                                <p>I have read and accepted the<Link to="/terms" className='text-blue-500 underline ml-1'>terms and conditions</Link></p>
                             </label>
                         </div>
 
