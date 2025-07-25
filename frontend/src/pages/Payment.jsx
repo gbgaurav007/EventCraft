@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import { useLocation } from 'react-router-dom';
 import { BallTriangle } from 'react-loader-spinner';
 import Navbar from '../components/Navbar';

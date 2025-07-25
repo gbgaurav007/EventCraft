@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FaCheckCircle, FaCircle } from "react-icons/fa";
 import API_BASE_URL from "../../ApiBaseURL";

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import {useEffect} from "react";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -24,7 +24,7 @@ const RefundPolicy = () => {
                 </p>
                 <ul className="list-disc pl-6 mb-4">
                     <li>If an event allows full refunds, cancellations made more than 48 hours before the event start time will be refunded in full.</li>
-                    <li>Cancellations made within 48 hours of the event may be partially refunded or non-refundable, depending on the event's specific policy.</li>
+                    <li>Cancellations made within 48 hours of the event may be partially refunded or non-refundable, depending on the event&apos;s specific policy.</li>
                     <li>Tickets marked as “non-refundable” during booking will not be eligible for any refund.</li>
                 </ul>
 
@@ -38,7 +38,7 @@ const RefundPolicy = () => {
 
                 <h2 className="text-xl font-bold mt-4 mb-4">No-Show Policy</h2>
                 <p className="mb-4">
-                    If a user fails to attend the event without prior cancellation, no refund will be issued. It is the user's responsibility to be present at the event venue or online platform on the scheduled date and time.
+                    If a user fails to attend the event without prior cancellation, no refund will be issued. It is the user&apos;s responsibility to be present at the event venue or online platform on the scheduled date and time.
                 </p>
 
                 <h2 className="text-xl font-bold mt-4 mb-4">Refund Process</h2>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from "react";
 import { motion } from 'framer-motion';
 import EventCard from './EventCard';
 import { useNavigate } from 'react-router-dom';
