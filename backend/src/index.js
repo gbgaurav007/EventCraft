@@ -8,8 +8,8 @@ dotenv.config({
 });
 
 connectDB()
-await createAdmin()
-  .then(() => {
+  .then(async () => {
+    await createAdmin();
     app.listen(process.env.PORT || 8000, () => {
       console.log(`server is running at port: ${process.env.PORT}`);
     });
