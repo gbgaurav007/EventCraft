@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import API_BASE_URL from '../../ApiBaseURL';
 import Cookies from "js-cookie";
 import Navbar from '../components/Navbar';

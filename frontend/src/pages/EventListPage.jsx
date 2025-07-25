@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import EventList from '../components/EventList';
@@ -47,7 +47,6 @@ function EventListPage() {
   const location = useLocation();
   const initialGenre = location.state?.genre || 'All';
 
-  const [selectedEvent, setSelectedEvent] = useState(null);
   const [genreFilter, setGenreFilter] = useState(initialGenre);
   const [locationFilter, setLocationFilter] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');

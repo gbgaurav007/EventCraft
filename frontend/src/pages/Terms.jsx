@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import {useEffect} from "react";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -73,7 +73,7 @@ const Terms = () => {
 
                 <h2 className="text-xl font-bold mt-4 mb-4">Limitation of Liability</h2>
                 <p className="mb-4">
-                    EventCraft provides its services on an "as-is" and "as-available" basis. We do not guarantee that the platform will be error-free, secure, or uninterrupted. To the maximum extent permitted by law, EventCraft will not be liable for any damages arising from:
+                    EventCraft provides its services on an &quot;as-is&quot; and &quot;as-available&quot; basis. We do not guarantee that the platform will be error-free, secure, or uninterrupted. To the maximum extent permitted by law, EventCraft will not be liable for any damages arising from:
                 </p>
                 <ul className="list-disc pl-6 mb-4">
                     <li>Your use or inability to use the platform</li>

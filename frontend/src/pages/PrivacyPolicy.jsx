@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import {useEffect} from "react";
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -16,7 +16,7 @@ const PrivacyPolicy = () => {
                 <p className="mb-4">
                     At EventCraft, we value your privacy. This Privacy Policy explains how we collect, use, and safeguard your personal information.
                     <br/><br/>
-                    Please read this policy carefully to understand EventCraft's policies and practices regarding your information and how EventCraft will treat it. By accessing or using its Services and/or registering for an account with EventCraft, you agree to this privacy policy and you are consenting to EventCraft's collection, use, disclosure, retention, and protection of your personal information as described here. If you do not provide the information EventCraft requires, EventCraft may not be able to provide all of its Services to you.
+                    Please read this policy carefully to understand EventCraft&apos;s policies and practices regarding your information and how EventCraft will treat it. By accessing or using its Services and/or registering for an account with EventCraft, you agree to this privacy policy and you are consenting to EventCraft&apos;s collection, use, disclosure, retention, and protection of your personal information as described here. If you do not provide the information EventCraft requires, EventCraft may not be able to provide all of its Services to you.
                 </p>
 
                 <h2 className="text-xl font-bold mt-4 mb-4">Information We Collect</h2>

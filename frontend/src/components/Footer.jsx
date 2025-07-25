@@ -1,6 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
 import facebook from "/assets/facebook.png";
-import instagram from "/assets/instagram.png";
 import linkedin from "/assets/linkedin.png";
 import logo from "/assets/logo.png";
 

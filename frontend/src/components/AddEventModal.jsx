@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from "react";
 import { motion } from 'framer-motion';
-import { FaPlus, FaTrashAlt } from 'react-icons/fa';
+import { FaTrashAlt } from 'react-icons/fa';
 
 const AddEventModal = ({ isOpen, onClose, onSubmit }) => {
   const [formData, setFormData] = useState({
